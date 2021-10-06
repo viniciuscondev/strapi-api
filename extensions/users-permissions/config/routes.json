@@ -1,0 +1,20 @@
+{
+    "routes": [{
+        "method": "PUT",
+        "path": "/users/me",
+        "handler": "User.updateMe",
+        "config": {
+          "policies": [],
+          "prefix": ""          
+        }
+      },
+      {
+        "method": "DELETE",
+        "path": "/users/me",
+        "handler": "User.deleteMe",
+        "config": {
+          "policies": [],
+          "prefix": ""          
+        }
+      }]
+}
