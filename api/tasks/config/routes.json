@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tasks",
+      "handler": "tasks.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/count",
+      "handler": "tasks.count",
+      "config": {
+        "policies": []
+      }
+    },    
+    {
+      "method": "GET",
+      "path": "/tasks/me",
+      "handler": "tasks.myTasks",
+      "config": {
+        "policies": []
+      }
+    }, 
+    {
+      "method": "POST",
+      "path": "/tasks",
+      "handler": "tasks.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tasks",
+      "handler": "tasks.updateTask",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tasks",
+      "handler": "tasks.deleteTask",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
