@@ -25,7 +25,16 @@ module.exports = {
         const knex = strapi.connections.default;
         const task = await knex('tasks').where('userid', id).where('id', taskid).delete();
 
-        return {message: "Tarefa apagada com sucesso!"};
+
+        if (task > 0 && task !== undefined) {
+            return ctx.send({
+                messsage: 'Tarefa apagada com sucesso!'
+            }, 200);
+        } else {
+            return ctx.send({
+                message: 'Tarefa não encontrada'
+            }, 400);
+        }
     },
 
     async updateTask(ctx) {
@@ -35,7 +44,15 @@ module.exports = {
 
         const knex = strapi.connections.default;
         const task = await knex('tasks').where('userid', id).where('id', taskid).update('title', newtask);
-
-        return {message: "Tarefa alterada com sucesso!"};
+       
+        if (task > 0 && task !== undefined) {
+            return ctx.send({
+                messsage: 'Tarefa alterada com sucesso!'
+            }, 200);
+        } else {
+            return ctx.send({
+                message: 'Tarefa não encontrada'
+            }, 400);
+        }
     }
 };
